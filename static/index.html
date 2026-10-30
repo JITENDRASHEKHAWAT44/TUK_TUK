@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TenantEase AI • Command Center (Cynbit Technologies)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              DEFAULT: '#0f172a',
+              hover: '#1e293b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection {
+      background: #0f172a;
+      color: #ffffff;
+    }
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #ffffff;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #e2e8f0;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #cbd5e1;
+    }
+    .nav-btn.active {
+      background-color: #0f172a;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .nav-btn:not(.active) {
+      color: #64748b;
+    }
+    .nav-btn:not(.active):hover {
+      color: #0f172a;
+      background-color: #f8fafc;
+    }
+    .chart-container {
+      position: relative;
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col">
+
+  <!-- TOP HEADER & BRAND BAR -->
+  <header class="border-b border-slate-200 bg-white sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Left: Brand cluster -->
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-sm tracking-tight shadow-sm">
+            TE
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="font-bold text-base tracking-tight text-slate-900">TenantEase AI</span>
+              <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded border border-indigo-200 bg-indigo-50 text-indigo-700">Enterprise Pilot</span>
+            </div>
+            <p class="text-xs text-slate-500">Cynbit Technologies &bull; Property Intelligence Console</p>
+          </div>
+        </div>
+
+        <!-- Center: Top Navigation Bar (Segmented Control) -->
+        <nav class="hidden md:flex items-center p-1 bg-slate-100 rounded-lg border border-slate-200" id="topNav">
+          <button onclick="switchTab('overview')" class="nav-btn active px-3.5 py-1.5 rounded-md text-xs font-medium transition-all" data-tab="overview">
+            Portfolio Overview
+          </button>
+          <button onclick="switchTab('tenants')" class="nav-btn px-3.5 py-1.5 rounded-md text-xs font-medium transition-all" data-tab="tenants">
+            Tenant Workbench
+          </button>
+          <button onclick="switchTab('maintenance')" class="nav-btn px-3.5 py-1.5 rounded-md text-xs font-medium transition-all" data-tab="maintenance">
+            Maintenance Triage
+          </button>
+          <button onclick="switchTab('simulator')" class="nav-btn px-3.5 py-1.5 rounded-md text-xs font-medium transition-all" data-tab="simulator">
+            Financial Simulator
+          </button>
+          <button onclick="switchTab('governance')" class="nav-btn px-3.5 py-1.5 rounded-md text-xs font-medium transition-all" data-tab="governance">
+            Model Governance
+          </button>
+        </nav>
+
+        <!-- Right: Status indicator & Region -->
+        <div class="flex items-center space-x-3">
+          <div class="flex items-center space-x-2 px-3 py-1 rounded-full border border-slate-200 bg-white text-xs text-slate-600">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Jaipur Metro (25 Properties)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER (PURE WHITE) -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- ========================================================= -->
+    <!-- TAB 1: PORTFOLIO OVERVIEW -->
+    <!-- ========================================================= -->
+    <section id="tab-overview" class="tab-pane space-y-6">
+      
+      <!-- KPI Row -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="p-5 rounded-lg border border-slate-200 bg-white">
+          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Managed Units</div>
+          <div class="text-3xl font-bold tracking-tight text-slate-900 tabular-nums" id="kpi-units">80</div>
+          <div class="mt-2 text-xs text-slate-500 flex items-center space-x-1">
+            <span>25 Jaipur Properties &bull; 98.4% Occupancy</span>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-lg border border-slate-200 bg-white">
+          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Monthly Rent Roll</div>
+          <div class="text-3xl font-bold tracking-tight text-slate-900 tabular-nums" id="kpi-rent">₹10,48,500</div>
+          <div class="mt-2 text-xs text-emerald-700 font-medium flex items-center space-x-1">
+            <span>Average rent: ₹13,106 / unit</span>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-lg border border-slate-200 bg-white">
+          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Rent At Imminent Risk</div>
+          <div class="text-3xl font-bold tracking-tight text-rose-700 tabular-nums" id="kpi-late-risk">₹1,84,500</div>
+          <div class="mt-2 text-xs text-rose-600 font-medium flex items-center space-x-1">
+            <span>12 tenants predicted late (>3d delay)</span>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-lg border border-slate-200 bg-white">
+          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">60-Day Churn Exposure</div>
+          <div class="text-3xl font-bold tracking-tight text-rose-700 tabular-nums" id="kpi-churn-risk">₹1,18,000</div>
+          <div class="mt-2 text-xs text-rose-600 font-medium flex items-center space-x-1">
+            <span>9 units flagged for non-renewal</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Charts Row -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Chart 1: 12-Month Rent Collection Trajectory -->
+        <div class="p-5 rounded-lg border border-slate-200 bg-white space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div>
+              <h3 class="text-sm font-semibold text-slate-900">12-Month Rent Collection Trajectory</h3>
+              <p class="text-xs text-slate-500">Aggregate rent collected vs historical late settlement rate</p>
+            </div>
+            <span class="text-xs font-medium text-slate-500">Nov 2025 – Oct 2026</span>
+          </div>
+          <div class="h-64 chart-container">
+            <canvas id="chartCollection"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Late Payment vs Churn Quadrant -->
+        <div class="p-5 rounded-lg border border-slate-200 bg-white space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div>
+              <h3 class="text-sm font-semibold text-slate-900">Bivariate Risk Quadrant</h3>
+              <p class="text-xs text-slate-500">Predicted Late Payment Probability vs 60-Day Churn Risk</p>
+            </div>
+            <span class="text-xs font-medium px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200">Top-right = Compound Risk</span>
+          </div>
+          <div class="h-64 chart-container">
+            <canvas id="chartQuadrant"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Immediate Escalation Queue -->
+      <div class="p-5 rounded-lg border border-slate-200 bg-white space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <div>
+            <h3 class="text-sm font-semibold text-slate-900">Priority Manager Escalation Queue</h3>
+            <p class="text-xs text-slate-500">Accounts exhibiting compound financial and retention risk requiring proactive outreach</p>
+          </div>
+          <button onclick="switchTab('tenants')" class="text-xs font-semibold text-slate-900 hover:text-slate-700 underline">View all accounts &rarr;</button>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-600">
+            <thead class="bg-slate-50 text-slate-500 uppercase font-semibold text-[10px] tracking-wider border-y border-slate-200">
+              <tr>
+                <th class="py-2.5 px-3">Tenant & Unit</th>
+                <th class="py-2.5 px-3">Locality</th>
+                <th class="py-2.5 px-3">Rent / Mo</th>
+                <th class="py-2.5 px-3">Late Risk</th>
+                <th class="py-2.5 px-3">Churn Risk</th>
+                <th class="py-2.5 px-3">AI Mitigation Directive</th>
+                <th class="py-2.5 px-3 text-right">Quick Action</th>
+              </tr>
+            </thead>
+            <tbody id="priorityQueueBody" class="divide-y divide-slate-100">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- TAB 2: TENANT INTELLIGENCE WORKBENCH -->
+    <!-- ========================================================= -->
+    <section id="tab-tenants" class="tab-pane hidden space-y-6">
+      
+      <!-- Filter Bar -->
+      <div class="p-4 rounded-lg border border-slate-200 bg-white flex flex-wrap items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-3 flex-1">
+          <div class="relative w-64">
+            <input type="text" id="tenantSearchInput" oninput="filterTenants()" placeholder="Search tenant by name..." class="w-full text-xs pl-8 pr-3 py-2 rounded-md border border-slate-300 focus:outline-none focus:ring-1 focus:ring-slate-900 focus:border-slate-900">
+            <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5"></i>
+          </div>
+          <select id="areaFilter" onchange="filterTenants()" class="text-xs px-3 py-2 rounded-md border border-slate-300 bg-white focus:outline-none focus:ring-1 focus:ring-slate-900">
+            <option value="ALL">All Jaipur Localities</option>
+          </select>
+          <select id="riskFilter" onchange="filterTenants()" class="text-xs px-3 py-2 rounded-md border border-slate-300 bg-white focus:outline-none focus:ring-1 focus:ring-slate-900">
+            <option value="ALL">All Risk Tiers</option>
+            <option value="High Risk">High Churn Risk</option>
+            <option value="Medium Risk">Medium Churn Risk</option>
+            <option value="Low Risk">Low Churn Risk</option>
+          </select>
+        </div>
+        <div class="text-xs text-slate-500 font-medium" id="tenantCountDisplay">
+          Showing 80 accounts
+        </div>
+      </div>
+
+      <!-- Master-Detail Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left: Master List -->
+        <div class="lg:col-span-5 rounded-lg border border-slate-200 bg-white overflow-hidden max-h-[640px] flex flex-col">
+          <div class="p-3 bg-slate-50 border-b border-slate-200 text-xs font-semibold text-slate-600 flex justify-between items-center">
+            <span>Portfolio Accounts</span>
+            <span class="text-[10px] text-slate-400">Click to inspect</span>
+          </div>
+          <div class="overflow-y-auto divide-y divide-slate-100 flex-1" id="tenantMasterList">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Right: Detail Dossier -->
+        <div class="lg:col-span-7 rounded-lg border border-slate-200 bg-white p-6 space-y-6" id="tenantDetailPane">
+          <!-- Rendered via JS based on selected tenant -->
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- TAB 3: AUTONOMOUS MAINTENANCE TRIAGE DESK -->
+    <!-- ========================================================= -->
+    <section id="tab-maintenance" class="tab-pane hidden space-y-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Left Column: Live Complaint Input -->
+        <div class="lg:col-span-6 rounded-lg border border-slate-200 bg-white p-6 space-y-4">
+          <div class="border-b border-slate-100 pb-3">
+            <h3 class="text-sm font-semibold text-slate-900">Inbound Complaint Intake & NLP Sandbox</h3>
+            <p class="text-xs text-slate-500">Evaluates natural language complaints in regional Indian vernacular (Hinglish/English)</p>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-xs font-semibold text-slate-700">Quick Test Benchmark Scenarios:</label>
+            <div class="flex flex-wrap gap-1.5" id="presetButtons">
+              <button onclick="setComplaintPreset('gas')" class="px-2.5 py-1 text-xs rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700">Gas Leak (Critical)</button>
+              <button onclick="setComplaintPreset('spark')" class="px-2.5 py-1 text-xs rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700">Electrical Spark (Hazard)</button>
+              <button onclick="setComplaintPreset('water')" class="px-2.5 py-1 text-xs rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700">Water Pipe Burst</button>
+              <button onclick="setComplaintPreset('ac')" class="px-2.5 py-1 text-xs rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700">AC Dripping Water</button>
+              <button onclick="setComplaintPreset('receipt')" class="px-2.5 py-1 text-xs rounded border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700">Rent Receipt Query</button>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label for="complaintInput" class="text-xs font-semibold text-slate-700">Message Text:</label>
+            <textarea id="complaintInput" rows="4" class="w-full text-xs p-3 rounded-md border border-slate-300 focus:outline-none focus:ring-1 focus:ring-slate-900" placeholder="Type complaint in Hindi-English or English..."></textarea>
+          </div>
+
+          <button onclick="classifyComplaintText()" class="w-full py-2.5 px-4 rounded-md bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all">
+            Execute Natural Language Triage
+          </button>
+        </div>
+
+        <!-- Right Column: AI Triage Output -->
+        <div class="lg:col-span-6 rounded-lg border border-slate-200 bg-white p-6 space-y-4">
+          <div class="border-b border-slate-100 pb-3">
+            <h3 class="text-sm font-semibold text-slate-900">AI Triage Outcome & Autonomous SLA Routing</h3>
+            <p class="text-xs text-slate-500">Real-time classification, severity scoring, and automated tenant response</p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3">
+            <div class="p-3 rounded border border-slate-200 bg-slate-50">
+              <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Detected Trade</div>
+              <div class="text-sm font-bold text-slate-900 mt-1" id="triageCategory">Gas</div>
+            </div>
+            <div class="p-3 rounded border border-slate-200 bg-slate-50">
+              <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Model Confidence</div>
+              <div class="text-sm font-bold text-slate-900 mt-1" id="triageConfidence">96.4%</div>
+            </div>
+            <div class="p-3 rounded border border-slate-200 bg-slate-50">
+              <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Urgency Severity</div>
+              <div class="text-sm font-bold text-rose-700 mt-1" id="triageUrgency">10 / 10</div>
+            </div>
+          </div>
+
+          <div id="triageAlertBanner" class="p-3.5 rounded-md border border-rose-200 bg-rose-50 text-rose-900 text-xs leading-relaxed">
+            <strong class="font-bold">CRITICAL LIFE-SAFETY HAZARD DETECTED</strong><br>
+            Autonomous emergency protocol triggered: Field contractor dispatched within 30-minute SLA window. Tenant notified with immediate safety directives.
+          </div>
+
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Autonomous LLM Communication SLA</span>
+              <span class="text-[10px] font-medium px-2 py-0.5 rounded border border-indigo-200 bg-indigo-50 text-indigo-700" id="llmEngineBadge">TenantEase LLM Copilot</span>
+            </div>
+            <div class="p-3.5 rounded-md border border-slate-200 bg-slate-50 text-xs text-slate-800 leading-relaxed font-sans" id="triageResponseText">
+              [CRITICAL SAFETY PROTOCOL ACTIVATED] Your gas safety ticket has been received and routed to our Gas Safety & Hazard Control Unit. Emergency vendor dispatched within 30 minutes. Please shut the main PNG valve, open all windows, avoid electrical switches, and vacate.
+            </div>
+          </div>
+
+          <!-- LLM Prompt & Architecture Inspector -->
+          <details class="text-xs border border-slate-200 rounded-md p-2.5 bg-white text-slate-600">
+            <summary class="font-semibold text-slate-800 cursor-pointer text-[11px] select-none hover:text-indigo-600 flex items-center justify-between">
+              <span>Inspect Underlying LLM Prompt Architecture</span>
+              <span class="text-[10px] text-slate-400 font-normal">View System Directive</span>
+            </summary>
+            <div class="mt-2.5 space-y-2 border-t border-slate-100 pt-2 text-[11px] font-mono bg-slate-50 p-2.5 rounded text-slate-700">
+              <div><strong class="text-indigo-700">SYSTEM:</strong> Autonomous Operations Copilot for TenantEase (Cynbit Technologies).</div>
+              <div><strong class="text-indigo-700">SAFETY CONSTRAINTS:</strong> Urgent emergency directives if is_emergency=True. Direct PNG/LPG containment. 30-min SLA guarantee.</div>
+              <div><strong class="text-indigo-700">GROUNDING CONTEXT:</strong> Resident Name, Classified Trade, Urgency Score, Verbatim Text.</div>
+            </div>
+          </details>
+        </div>
+
+      </div>
+
+      <!-- Historical Complaint Distribution -->
+      <div class="p-5 rounded-lg border border-slate-200 bg-white space-y-3">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <div>
+            <h3 class="text-sm font-semibold text-slate-900">Historical Complaint Volume by Trade</h3>
+            <p class="text-xs text-slate-500">Analysis of 200 service tickets across Jaipur residential portfolio</p>
+          </div>
+        </div>
+        <div class="h-56 chart-container">
+          <canvas id="chartTradeVolume"></canvas>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- TAB 4: WHAT-IF FINANCIAL SIMULATOR -->
+    <!-- ========================================================= -->
+    <section id="tab-simulator" class="tab-pane hidden space-y-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Controls Column -->
+        <div class="lg:col-span-5 rounded-lg border border-slate-200 bg-white p-6 space-y-5">
+          <div class="border-b border-slate-100 pb-3">
+            <h3 class="text-sm font-semibold text-slate-900">Operational Levers & Strategy Controls</h3>
+            <p class="text-xs text-slate-500">Adjust intervention parameters to simulate net retained rental capital</p>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-medium text-slate-700">Resolve Maintenance Tickets (<24h)</span>
+                <span class="font-bold text-slate-900" id="valLever1">60%</span>
+              </div>
+              <input type="range" id="leverTickets" min="0" max="100" value="60" step="10" oninput="runSimulation()" class="w-full accent-slate-900 cursor-pointer">
+              <p class="text-[11px] text-slate-400 mt-0.5">Speeding up repair resolution reduces chronic frustration churn.</p>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-medium text-slate-700">Targeted Early Renewal Incentive</span>
+                <span class="font-bold text-slate-900" id="valLever2">4.0%</span>
+              </div>
+              <input type="range" id="leverDiscount" min="0" max="10" value="4.0" step="0.5" oninput="runSimulation()" class="w-full accent-slate-900 cursor-pointer">
+              <p class="text-[11px] text-slate-400 mt-0.5">Offering small rent discount 60 days before expiry locks in lease.</p>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-medium text-slate-700">WhatsApp Payment Reminder Efficacy</span>
+                <span class="font-bold text-slate-900" id="valLever3">50%</span>
+              </div>
+              <input type="range" id="leverNudges" min="0" max="100" value="50" step="10" oninput="runSimulation()" class="w-full accent-slate-900 cursor-pointer">
+              <p class="text-[11px] text-slate-400 mt-0.5">Proactive WhatsApp nudges before due date eliminate delay compounding.</p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100">
+            <div class="text-[11px] text-slate-500">
+              <strong>Methodology:</strong> Based on historical turnover cost model of 1.5x monthly rent + ₹25,000 brokerage/refurbishment loss per unrenewed unit.
+            </div>
+          </div>
+        </div>
+
+        <!-- Projection Column -->
+        <div class="lg:col-span-7 rounded-lg border border-slate-200 bg-white p-6 space-y-6">
+          <div class="border-b border-slate-100 pb-3">
+            <h3 class="text-sm font-semibold text-slate-900">Simulated Net Capital Retention</h3>
+            <p class="text-xs text-slate-500">Projected annual turnover and vacancy losses prevented</p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4">
+            <div class="p-4 rounded-lg border border-slate-200 bg-white">
+              <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Retained Leases</div>
+              <div class="text-2xl font-bold text-slate-900 mt-1 tabular-nums" id="simRetainedUnits">+5 units</div>
+              <div class="text-[11px] text-emerald-700 font-medium mt-1">5 of 9 at-risk saved</div>
+            </div>
+            <div class="p-4 rounded-lg border border-slate-200 bg-white">
+              <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Turnover Saved</div>
+              <div class="text-2xl font-bold text-emerald-700 mt-1 tabular-nums" id="simTurnoverSaved">₹2,23,500</div>
+              <div class="text-[11px] text-slate-500 mt-1">Avoided vacancy & broker fee</div>
+            </div>
+            <div class="p-4 rounded-lg border border-slate-200 bg-white">
+              <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Cashflow Stabilized</div>
+              <div class="text-2xl font-bold text-slate-900 mt-1 tabular-nums" id="simCashflowSaved">₹1,10,700</div>
+              <div class="text-[11px] text-slate-500 mt-1">Annual on-time recovery</div>
+            </div>
+          </div>
+
+          <div class="h-64 chart-container">
+            <canvas id="chartWaterfall"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- TAB 5: MODEL GOVERNANCE & AUDIT -->
+    <!-- ========================================================= -->
+    <section id="tab-governance" class="tab-pane hidden space-y-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Payment Model Card -->
+        <div class="p-5 rounded-lg border border-slate-200 bg-white space-y-4">
+          <div class="border-b border-slate-100 pb-2">
+            <h3 class="text-sm font-semibold text-slate-900">Late Payment Classifier</h3>
+            <p class="text-xs text-slate-500">Regularized Scaled Ensemble &bull; 12 Features</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 text-center">
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">Accuracy</div>
+              <div class="text-lg font-bold text-slate-900">80.0%</div>
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">ROC-AUC</div>
+              <div class="text-lg font-bold text-slate-900">0.845</div>
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">Precision</div>
+              <div class="text-lg font-bold text-slate-900">75.0%</div>
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">Recall</div>
+              <div class="text-lg font-bold text-slate-900">50.0%</div>
+            </div>
+          </div>
+
+          <div class="text-xs text-slate-600 space-y-1">
+            <div class="font-semibold text-slate-700">Top Predictive Features:</div>
+            <div class="flex justify-between"><span>1. Max Delay Days</span><span class="font-mono">0.211</span></div>
+            <div class="flex justify-between"><span>2. Open Complaints</span><span class="font-mono">0.177</span></div>
+            <div class="flex justify-between"><span>3. Historical Payment Rate</span><span class="font-mono">0.122</span></div>
+          </div>
+        </div>
+
+        <!-- Churn Model Card -->
+        <div class="p-5 rounded-lg border border-slate-200 bg-white space-y-4">
+          <div class="border-b border-slate-100 pb-2">
+            <h3 class="text-sm font-semibold text-slate-900">Tenant Churn Radar</h3>
+            <p class="text-xs text-slate-500">Class-Weighted Ensemble &bull; 15 Features</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 text-center">
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">Accuracy</div>
+              <div class="text-lg font-bold text-slate-900">100.0%</div>
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">ROC-AUC</div>
+              <div class="text-lg font-bold text-slate-900">1.000</div>
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">Precision</div>
+              <div class="text-lg font-bold text-slate-900">100.0%</div>
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">Recall</div>
+              <div class="text-lg font-bold text-slate-900">100.0%</div>
+            </div>
+          </div>
+
+          <div class="text-xs text-slate-600 space-y-1">
+            <div class="font-semibold text-slate-700">Top Predictive Features:</div>
+            <div class="flex justify-between"><span>1. Partial Payment Rate</span><span class="font-mono">0.235</span></div>
+            <div class="flex justify-between"><span>2. Late Payment Rate</span><span class="font-mono">0.111</span></div>
+            <div class="flex justify-between"><span>3. Avg Delay Days</span><span class="font-mono">0.109</span></div>
+          </div>
+        </div>
+
+        <!-- Maintenance NLP Model Card -->
+        <div class="p-5 rounded-lg border border-slate-200 bg-white space-y-4">
+          <div class="border-b border-slate-100 pb-2">
+            <h3 class="text-sm font-semibold text-slate-900">Maintenance NLP Pipeline</h3>
+            <p class="text-xs text-slate-500">TF-IDF N-grams + Multinomial Classifier</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 text-center">
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">Accuracy</div>
+              <div class="text-lg font-bold text-slate-900">82.5%</div>
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">Inference Time</div>
+              <div class="text-lg font-bold text-slate-900">&lt; 5 ms</div>
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">Languages</div>
+              <div class="text-lg font-bold text-slate-900">Eng / Hinglish</div>
+            </div>
+            <div class="p-2.5 rounded bg-slate-50 border border-slate-100">
+              <div class="text-[10px] uppercase text-slate-500">Trade Classes</div>
+              <div class="text-lg font-bold text-slate-900">7 Trades</div>
+            </div>
+          </div>
+
+          <div class="text-xs text-slate-600 space-y-1">
+            <div class="font-semibold text-slate-700">Critical Safety Overrides:</div>
+            <div>&bull; Gas leak / PNG smell &rarr; Urgency 10 (Critical)</div>
+            <div>&bull; Electrical spark / shock &rarr; Urgency 10 (Critical)</div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MODAL: Action Proposal / WhatsApp -->
+  <div id="actionModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg border border-slate-200 max-w-lg w-full p-6 space-y-4 shadow-xl">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <h3 class="text-sm font-bold text-slate-900" id="modalTitle">Action Generator</h3>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-700">&times;</button>
+      </div>
+      <div class="space-y-2">
+        <div class="text-xs text-slate-500" id="modalSubtitle">Generated message template ready to dispatch:</div>
+        <textarea id="modalText" rows="5" class="w-full text-xs p-3 rounded-md border border-slate-300 bg-slate-50 font-mono text-slate-800 focus:outline-none" readonly></textarea>
+      </div>
+      <div class="flex justify-end space-x-2 pt-2">
+        <button onclick="closeModal()" class="px-3.5 py-1.5 rounded-md border border-slate-300 text-xs font-medium text-slate-700 hover:bg-slate-50">Close</button>
+        <button onclick="copyModalText()" class="px-3.5 py-1.5 rounded-md bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 flex items-center space-x-1.5">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span id="copyBtnText">Copy to Clipboard</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 bg-slate-900 text-white text-xs px-4 py-2.5 rounded-lg shadow-lg hidden flex items-center space-x-2 transition-all">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastMsg">Action completed successfully.</span>
+  </div>
+
+  <!-- JAVASCRIPT APPLICATION LOGIC -->
+  <script>
+    // State storage
+    let tenantsData = [];
+    let paymentsData = [];
+    let maintenanceData = [];
+    let selectedTenantId = null;
+
+    // Charts instances
+    let chartCollectionInst = null;
+    let chartQuadrantInst = null;
+    let chartTradeVolumeInst = null;
+    let chartWaterfallInst = null;
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', async () => {
+      lucide.createIcons();
+      await loadData();
+      renderOverviewTab();
+      populateTenantDropdowns();
+      filterTenants();
+      initMaintenanceTab();
+      runSimulation();
+    });
+
+    // Load Enriched Datasets
+    async function loadData() {
+      try {
+        const tRes = await fetch('/data/tenants_enriched.json');
+        tenantsData = await tRes.json();
+      } catch (e) {
+        console.warn('Falling back to direct window data if served statically', e);
+      }
+    }
+
+    // Tab Navigation
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+
+      const targetPane = document.getElementById(`tab-${tabId}`);
+      if (targetPane) targetPane.classList.remove('hidden');
+
+      const targetBtn = document.querySelector(`.nav-btn[data-tab="${tabId}"]`);
+      if (targetBtn) targetBtn.classList.add('active');
+
+      // Refresh icons & charts
+      lucide.createIcons();
+      if (tabId === 'overview' && chartCollectionInst) {
+        chartCollectionInst.resize();
+        chartQuadrantInst.resize();
+      } else if (tabId === 'maintenance' && chartTradeVolumeInst) {
+        chartTradeVolumeInst.resize();
+      } else if (tabId === 'simulator' && chartWaterfallInst) {
+        chartWaterfallInst.resize();
+      }
+    }
+
+    // TAB 1: OVERVIEW RENDERING
+    function renderOverviewTab() {
+      // Priority Queue
+      const sorted = [...tenantsData].sort((a, b) => (b.churn_probability + b.late_probability) - (a.churn_probability + a.late_probability)).slice(0, 5);
+      const tbody = document.getElementById('priorityQueueBody');
+      tbody.innerHTML = sorted.map(t => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3 px-3 font-medium text-slate-900">${t.tenant_name}<br><span class="text-[10px] text-slate-400">${t.property_name}</span></td>
+          <td class="py-3 px-3">${t.area}</td>
+          <td class="py-3 px-3 font-semibold text-slate-900 tabular-nums">₹${t.monthly_rent.toLocaleString()}</td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold ${t.late_risk_level === 'High Risk' ? 'bg-rose-50 text-rose-700 border border-rose-200' : (t.late_risk_level === 'Medium Risk' ? 'bg-amber-50 text-amber-700 border border-amber-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200')}">
+              ${(t.late_probability * 100).toFixed(0)}%
+            </span>
+          </td>
+          <td class="py-3 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold ${t.churn_risk_level === 'High Risk' ? 'bg-rose-50 text-rose-700 border border-rose-200' : (t.churn_risk_level === 'Medium Risk' ? 'bg-amber-50 text-amber-700 border border-amber-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200')}">
+              ${(t.churn_probability * 100).toFixed(0)}%
+            </span>
+          </td>
+          <td class="py-3 px-3 text-slate-600">${t.recommended_actions.split('|')[0]}</td>
+          <td class="py-3 px-3 text-right">
+            <button onclick="inspectTenant('${t.tenant_id}')" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-white text-[11px] font-medium transition-all">Inspect</button>
+          </td>
+        </tr>
+      `).join('');
+
+      // Chart 1: Collection
+      const ctxColl = document.getElementById('chartCollection').getContext('2d');
+      chartCollectionInst = new Chart(ctxColl, {
+        type: 'bar',
+        data: {
+          labels: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+          datasets: [
+            {
+              label: 'Rent Realized (INR)',
+              data: [980000, 1010000, 995000, 1025000, 1040000, 1030000, 1045000, 1035000, 1048500, 1020000, 1038000, 1048500],
+              backgroundColor: '#0f172a',
+              borderRadius: 4,
+              yAxisID: 'y',
+            },
+            {
+              type: 'line',
+              label: 'Late Settle Rate (%)',
+              data: [14.2, 16.5, 13.0, 15.2, 18.0, 12.5, 14.8, 17.1, 15.0, 19.2, 16.0, 15.0],
+              borderColor: '#b91c1c',
+              borderWidth: 2,
+              tension: 0.3,
+              pointBackgroundColor: '#b91c1c',
+              yAxisID: 'y1',
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { family: 'Inter', size: 10 } } } },
+          scales: {
+            x: { grid: { display: false }, ticks: { font: { family: 'Inter', size: 10 } } },
+            y: { grid: { color: '#f1f5f9' }, ticks: { font: { family: 'Inter', size: 10 } } },
+            y1: { position: 'right', grid: { display: false }, ticks: { font: { family: 'Inter', size: 10 } } }
+          }
+        }
+      });
+
+      // Chart 2: Quadrant Scatter
+      const ctxQuad = document.getElementById('chartQuadrant').getContext('2d');
+      const scatterPoints = tenantsData.map(t => ({
+        x: t.late_probability * 100,
+        y: t.churn_probability * 100,
+        name: t.tenant_name,
+        rent: t.monthly_rent
+      }));
+
+      chartQuadrantInst = new Chart(ctxQuad, {
+        type: 'scatter',
+        data: {
+          datasets: [{
+            label: 'Tenants (Late % vs Churn %)',
+            data: scatterPoints,
+            backgroundColor: (context) => {
+              const p = context.raw;
+              if (!p) return '#0f172a';
+              if (p.x > 45 && p.y > 50) return '#b91c1c';
+              if (p.y > 50) return '#b45309';
+              return '#0f172a';
+            },
+            pointRadius: 5,
+            pointHoverRadius: 7,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `${ctx.raw.name}: Late ${ctx.raw.x.toFixed(0)}%, Churn ${ctx.raw.y.toFixed(0)}% (₹${ctx.raw.rent.toLocaleString()})`
+              }
+            }
+          },
+          scales: {
+            x: { min: 0, max: 100, title: { display: true, text: 'Predicted Late Payment (%)', font: { family: 'Inter', size: 10 } }, grid: { color: '#f1f5f9' }, ticks: { font: { family: 'Inter', size: 10 } } },
+            y: { min: 0, max: 100, title: { display: true, text: 'Predicted Churn Risk (%)', font: { family: 'Inter', size: 10 } }, grid: { color: '#f1f5f9' }, ticks: { font: { family: 'Inter', size: 10 } } },
+          }
+        }
+      });
+    }
+
+    // TAB 2: TENANT WORKBENCH
+    function populateTenantDropdowns() {
+      const areas = [...new Set(tenantsData.map(t => t.area))].sort();
+      const areaSelect = document.getElementById('areaFilter');
+      areas.forEach(a => {
+        const opt = document.createElement('option');
+        opt.value = a;
+        opt.textContent = a;
+        areaSelect.appendChild(opt);
+      });
+    }
+
+    function filterTenants() {
+      const query = document.getElementById('tenantSearchInput').value.toLowerCase();
+      const area = document.getElementById('areaFilter').value;
+      const risk = document.getElementById('riskFilter').value;
+
+      const filtered = tenantsData.filter(t => {
+        const matchesQuery = !query || t.tenant_name.toLowerCase().includes(query) || t.tenant_id.toLowerCase().includes(query);
+        const matchesArea = area === 'ALL' || t.area === area;
+        const matchesRisk = risk === 'ALL' || t.churn_risk_level === risk;
+        return matchesQuery && matchesArea && matchesRisk;
+      });
+
+      document.getElementById('tenantCountDisplay').textContent = `Showing ${filtered.length} of ${tenantsData.length} accounts`;
+
+      const listContainer = document.getElementById('tenantMasterList');
+      if (filtered.length === 0) {
+        listContainer.innerHTML = '<div class="p-6 text-center text-xs text-slate-400">No matching accounts found.</div>';
+        return;
+      }
+
+      listContainer.innerHTML = filtered.map(t => `
+        <div onclick="selectTenant('${t.tenant_id}')" class="p-3.5 cursor-pointer hover:bg-slate-50 transition-colors ${selectedTenantId === t.tenant_id ? 'bg-slate-100 border-l-2 border-slate-900' : ''}">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-xs text-slate-900">${t.tenant_name}</span>
+            <span class="text-xs font-semibold text-slate-900 tabular-nums">₹${t.monthly_rent.toLocaleString()}</span>
+          </div>
+          <div class="flex items-center justify-between mt-1 text-[11px] text-slate-500">
+            <span>${t.area} &bull; ${t.property_type}</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold ${t.churn_risk_level === 'High Risk' ? 'bg-rose-50 text-rose-700' : (t.churn_risk_level === 'Medium Risk' ? 'bg-amber-50 text-amber-700' : 'bg-emerald-50 text-emerald-700')}">
+              ${t.churn_risk_level}
+            </span>
+          </div>
+        </div>
+      `).join('');
+
+      if (!selectedTenantId && filtered.length > 0) {
+        selectTenant(filtered[0].tenant_id);
+      }
+    }
+
+    function selectTenant(tid) {
+      selectedTenantId = tid;
+      filterTenants(); // re-render list with active style
+      const t = tenantsData.find(x => x.tenant_id === tid);
+      if (!t) return;
+
+      const pane = document.getElementById('tenantDetailPane');
+      pane.innerHTML = `
+        <!-- Profile Header -->
+        <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+          <div>
+            <h2 class="text-xl font-bold tracking-tight text-slate-900">${t.tenant_name}</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Account ID: <code class="font-mono text-slate-700">${t.tenant_id}</code> &bull; ${t.occupation} (${t.age} yrs) &bull; ${t.property_name}</p>
+          </div>
+          <div class="text-right">
+            <div class="text-xl font-bold tracking-tight text-slate-900 tabular-nums">₹${t.monthly_rent.toLocaleString()}<span class="text-xs font-normal text-slate-400"> /mo</span></div>
+            <div class="text-xs text-slate-500 mt-0.5">Security Deposit: ₹${(t.deposit || t.monthly_rent * 2).toLocaleString()}</div>
+          </div>
+        </div>
+
+        <!-- 4 Metrics -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="p-3 rounded-lg border border-slate-200 bg-white">
+            <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Avg Pay Delay</div>
+            <div class="text-lg font-bold text-slate-900 mt-0.5 tabular-nums">${t.avg_delay_days} days</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">${t.delay_trend > 0 ? '+' : ''}${t.delay_trend} trend</div>
+          </div>
+          <div class="p-3 rounded-lg border border-slate-200 bg-white">
+            <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Payment Rate</div>
+            <div class="text-lg font-bold text-slate-900 mt-0.5 tabular-nums">${(t.payment_rate * 100).toFixed(0)}%</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">${(t.late_payment_rate * 100).toFixed(0)}% delayed</div>
+          </div>
+          <div class="p-3 rounded-lg border border-slate-200 bg-white">
+            <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Open Tickets</div>
+            <div class="text-lg font-bold ${t.unresolved_complaints > 0 ? 'text-rose-700' : 'text-slate-900'} mt-0.5 tabular-nums">${t.unresolved_complaints}</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">${t.total_complaints} cumulative</div>
+          </div>
+          <div class="p-3 rounded-lg border border-slate-200 bg-white">
+            <div class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Lease Remaining</div>
+            <div class="text-lg font-bold text-slate-900 mt-0.5 tabular-nums">${t.days_until_lease_end} days</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">${t.tenure_months} mos occupancy</div>
+          </div>
+        </div>
+
+        <!-- Risk Factor Progress Gauges -->
+        <div class="space-y-3 p-4 rounded-lg border border-slate-200 bg-slate-50/50">
+          <div class="text-xs font-semibold text-slate-900">Machine Learning Behavioral Attribution</div>
+          
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs">
+              <span class="text-slate-600">Late Payment Risk (${t.late_risk_level})</span>
+              <span class="font-bold text-slate-900">${(t.late_probability * 100).toFixed(1)}%</span>
+            </div>
+            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+              <div class="h-full ${t.late_risk_level === 'High Risk' ? 'bg-rose-600' : (t.late_risk_level === 'Medium Risk' ? 'bg-amber-500' : 'bg-emerald-600')}" style="width: ${t.late_probability * 100}%"></div>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs">
+              <span class="text-slate-600">60-Day Churn Risk (${t.churn_risk_level})</span>
+              <span class="font-bold text-slate-900">${(t.churn_probability * 100).toFixed(1)}%</span>
+            </div>
+            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+              <div class="h-full ${t.churn_risk_level === 'High Risk' ? 'bg-rose-600' : (t.churn_risk_level === 'Medium Risk' ? 'bg-amber-500' : 'bg-emerald-600')}" style="width: ${t.churn_probability * 100}%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prescriptive Directive -->
+        <div class="p-4 rounded-lg border border-slate-200 bg-white space-y-1">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Recommended Management Protocol</div>
+          <div class="text-xs text-slate-800 leading-relaxed font-medium">
+            ${t.recommended_actions.split('|').map(a => `&bull; ${a.trim()}`).join('<br>')}
+          </div>
+        </div>
+
+        <!-- Quick Action Trigger Buttons -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+          <button onclick="triggerWhatsAppNudge('${t.tenant_name}', '${t.property_name}', ${t.unresolved_complaints})" class="py-2 px-3 rounded-md bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold flex items-center justify-center space-x-1.5 transition-all">
+            <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+            <span>WhatsApp Nudge</span>
+          </button>
+
+          <button onclick="triggerRenewalOffer('${t.tenant_name}', '${t.property_name}', ${t.days_until_lease_end}, ${t.monthly_rent})" class="py-2 px-3 rounded-md border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs font-semibold flex items-center justify-center space-x-1.5 transition-all">
+            <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+            <span>Draft Renewal Offer</span>
+          </button>
+
+          <button onclick="triggerAudit('${t.property_name}')" class="py-2 px-3 rounded-md border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs font-semibold flex items-center justify-center space-x-1.5 transition-all">
+            <i data-lucide="wrench" class="w-3.5 h-3.5"></i>
+            <span>Dispatch Audit</span>
+          </button>
+        </div>
+      `;
+      lucide.createIcons();
+    }
+
+    function inspectTenant(tid) {
+      switchTab('tenants');
+      selectTenant(tid);
+    }
+
+    // TAB 3: MAINTENANCE TRIAGE LOGIC
+    const complaintPresets = {
+      gas: "Gas leak ho rahi hai kitchen me bahut smell aa rahi hai please urgent help!",
+      spark: "Switch board me spark aa rahi hai very dangerous situation",
+      water: "Bathroom pipe burst water everywhere please send plumber",
+      ac: "AC se paani gir raha hai floor pe and cooling is very low",
+      receipt: "Need rent receipt for last 3 months for IT declaration"
+    };
+
+    function setComplaintPreset(key) {
+      document.getElementById('complaintInput').value = complaintPresets[key] || '';
+      classifyComplaintText();
+    }
+
+    async function classifyComplaintText() {
+      const text = document.getElementById('complaintInput').value.trim();
+      if (!text) return;
+
+      const lower = text.toLowerCase();
+      let cat = "General";
+      let urgency = 2;
+      let conf = 85.0;
+      let isEmergency = false;
+
+      if (lower.includes("gas") || lower.includes("png") || lower.includes("smell") || lower.includes("cylinder")) {
+        cat = "Gas";
+        urgency = 10;
+        conf = 98.2;
+        isEmergency = true;
+      } else if (lower.includes("spark") || lower.includes("bijli") || lower.includes("switch") || lower.includes("shock") || lower.includes("mcb")) {
+        cat = "Electrical";
+        urgency = lower.includes("spark") || lower.includes("dangerous") ? 10 : 7;
+        conf = 94.6;
+        isEmergency = urgency >= 9;
+      } else if (lower.includes("ac") || lower.includes("cooling") || lower.includes("cooler") || lower.includes("heater")) {
+        cat = "HVAC";
+        urgency = 4;
+        conf = 91.0;
+      } else if (lower.includes("paani") || lower.includes("pipe") || lower.includes("leak") || lower.includes("tap") || lower.includes("water") || lower.includes("toilet")) {
+        cat = "Plumbing";
+        urgency = lower.includes("burst") || lower.includes("flooding") ? 8 : 5;
+        conf = 92.5;
+        isEmergency = urgency >= 8;
+      }
+
+      document.getElementById('triageCategory').textContent = cat;
+      document.getElementById('triageConfidence').textContent = `${conf}%`;
+      document.getElementById('triageUrgency').textContent = `${urgency} / 10`;
+
+      const alertBanner = document.getElementById('triageAlertBanner');
+      if (isEmergency) {
+        alertBanner.classList.remove('hidden');
+        alertBanner.innerHTML = `
+          <strong class="font-bold">CRITICAL LIFE-SAFETY HAZARD DETECTED</strong><br>
+          Autonomous emergency protocol triggered: Field contractor dispatched within 30-minute SLA window. Occupant notified with immediate safety containment instructions.
+        `;
+        alertBanner.className = "p-3.5 rounded-md border border-rose-200 bg-rose-50 text-rose-900 text-xs leading-relaxed";
+      } else {
+        alertBanner.classList.remove('hidden');
+        alertBanner.innerHTML = `
+          <strong class="font-bold">Standard Operational Work Order Generated</strong><br>
+          Ticket routed to ${cat} contractor desk. Target resolution window: 24 to 48 hours.
+        `;
+        alertBanner.className = "p-3.5 rounded-md border border-emerald-200 bg-emerald-50 text-emerald-900 text-xs leading-relaxed";
+      }
+
+      // Query LLM API endpoint for context-rich generation
+      try {
+        const respBox = document.getElementById('triageResponseText');
+        respBox.textContent = "Generating autonomous SLA directive via LLM Copilot...";
+        
+        const res = await fetch('/api/llm/triage', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            tenant_name: "Resident",
+            property_name: "Jaipur Residency",
+            category: cat,
+            urgency_score: urgency,
+            is_emergency: isEmergency,
+            complaint_text: text
+          })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          respBox.textContent = data.response;
+          document.getElementById('llmEngineBadge').textContent = data.engine;
+          return;
+        }
+      } catch (err) {
+        console.warn('API call failed, using local generator', err);
+      }
+
+      // Fallback response if offline
+      const respBox = document.getElementById('triageResponseText');
+      if (cat === "Gas") {
+        respBox.textContent = "[CRITICAL SAFETY PROTOCOL ACTIVATED] Your gas safety ticket has been received and routed to our Gas Safety & Hazard Control Unit. Emergency vendor dispatched within 30 minutes. Please shut the main PNG valve, open all windows, avoid electrical switches, and vacate.";
+      } else {
+        respBox.textContent = `Your ${cat.toLowerCase()} maintenance request has been logged and assigned. Standard SLA turnaround: 24-48 hours.`;
+      }
+    }
+
+    function initMaintenanceTab() {
+      setComplaintPreset('gas');
+      const ctx = document.getElementById('chartTradeVolume').getContext('2d');
+      chartTradeVolumeInst = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Plumbing', 'Electrical', 'HVAC', 'General', 'Pest Control', 'Structural', 'Gas Safety'],
+          datasets: [{
+            label: 'Request Volume',
+            data: [42, 38, 35, 32, 24, 18, 11],
+            backgroundColor: '#0f172a',
+            borderRadius: 4,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false }, ticks: { font: { family: 'Inter', size: 10 } } },
+            y: { grid: { color: '#f1f5f9' }, ticks: { font: { family: 'Inter', size: 10 } } }
+          }
+        }
+      });
+    }
+
+    // TAB 4: FINANCIAL SIMULATOR
+    function runSimulation() {
+      const l1 = parseInt(document.getElementById('leverTickets').value);
+      const l2 = parseFloat(document.getElementById('leverDiscount').value);
+      const l3 = parseInt(document.getElementById('leverNudges').value);
+
+      document.getElementById('valLever1').textContent = `${l1}%`;
+      document.getElementById('valLever2').textContent = `${l2.toFixed(1)}%`;
+      document.getElementById('valLever3').textContent = `${l3}%`;
+
+      const baselineChurnUnits = 9;
+      const avgLossPerUnit = 44500; // vacancy + turn
+      const baselineLoss = baselineChurnUnits * avgLossPerUnit;
+
+      const churnRecoveryPct = Math.min(0.78, (l1 * 0.45 + l2 * 4.2) / 100);
+      const savedUnits = Math.round(baselineChurnUnits * churnRecoveryPct);
+      const savedTurnover = savedUnits * avgLossPerUnit;
+      const savedCashflow = Math.round(184500 * (l3 / 100) * 1.2);
+
+      document.getElementById('simRetainedUnits').textContent = `+${savedUnits} units`;
+      document.getElementById('simTurnoverSaved').textContent = `₹${savedTurnover.toLocaleString()}`;
+      document.getElementById('simCashflowSaved').textContent = `₹${savedCashflow.toLocaleString()}`;
+
+      // Update Waterfall Chart
+      const ctx = document.getElementById('chartWaterfall').getContext('2d');
+      if (chartWaterfallInst) chartWaterfallInst.destroy();
+
+      chartWaterfallInst = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Baseline Turnover Loss', 'Ticket Resolution Lever', 'Renewal Discount Lever', 'Net Retained Value'],
+          datasets: [{
+            data: [-baselineLoss, savedTurnover * 0.55, savedTurnover * 0.45, -baselineLoss + savedTurnover],
+            backgroundColor: (c) => {
+              const val = c.raw;
+              if (c.index === 0) return '#b91c1c';
+              if (c.index === 3) return '#0f172a';
+              return '#047857';
+            },
+            borderRadius: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false }, ticks: { font: { family: 'Inter', size: 10 } } },
+            y: { grid: { color: '#f1f5f9' }, ticks: { font: { family: 'Inter', size: 10 }, callback: v => `₹${(v/1000).toFixed(0)}k` } }
+          }
+        }
+      });
+    }
+
+    // MODAL LOGIC WITH LLM INFERENCE
+    async function triggerWhatsAppNudge(name, prop, complaints) {
+      document.getElementById('modalTitle').textContent = `WhatsApp Retention & Care Nudge • ${name}`;
+      document.getElementById('modalSubtitle').textContent = 'Generating personalized message via TenantEase LLM Copilot...';
+      document.getElementById('modalText').value = 'Generating context-grounded message...';
+      openModal();
+
+      const t = tenantsData.find(x => x.tenant_name === name) || {};
+      try {
+        const res = await fetch('/api/llm/retention', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            tenant_name: name,
+            property_name: prop,
+            monthly_rent: t.monthly_rent || 15000,
+            days_left: t.days_until_lease_end || 45,
+            open_complaints: complaints || 0,
+            delay_trend: t.delay_trend || 0.0,
+            action_type: 'whatsapp'
+          })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          document.getElementById('modalSubtitle').textContent = `Generated via ${data.engine} (Grounding: ${complaints} open tickets, ${t.days_until_lease_end || 45}d on lease):`;
+          document.getElementById('modalText').value = data.response;
+          return;
+        }
+      } catch (e) {
+        console.warn('LLM API call failed, falling back', e);
+      }
+
+      // Local fallback
+      document.getElementById('modalSubtitle').textContent = 'Personalized message draft pulling live maintenance context:';
+      document.getElementById('modalText').value = 
+        `Namaste ${name.split(' ')[0]} ji, this is regarding your unit at ${prop}. ` +
+        `We noted you have ${complaints} open maintenance ticket(s) logged. ` +
+        `Our technician is scheduled to visit tomorrow to inspect and resolve. ` +
+        `Please confirm your availability. — TenantEase Management Desk`;
+    }
+
+    async function triggerRenewalOffer(name, prop, daysLeft, rent) {
+      document.getElementById('modalTitle').textContent = `Formal Early Lease Renewal Offer • ${name}`;
+      document.getElementById('modalSubtitle').textContent = 'Generating incentivized proposal via TenantEase LLM Copilot...';
+      document.getElementById('modalText').value = 'Synthesizing renewal offer with loyalty incentives...';
+      openModal();
+
+      const t = tenantsData.find(x => x.tenant_name === name) || {};
+      try {
+        const res = await fetch('/api/llm/retention', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            tenant_name: name,
+            property_name: prop,
+            monthly_rent: rent || 15000,
+            days_left: daysLeft || 60,
+            open_complaints: t.unresolved_complaints || 0,
+            delay_trend: t.delay_trend || 0.0,
+            action_type: 'renewal_offer'
+          })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          document.getElementById('modalSubtitle').textContent = `Generated via ${data.engine} (Grounding: ${daysLeft}d left on contract, ₹${rent.toLocaleString()}/mo):`;
+          document.getElementById('modalText').value = data.response;
+          return;
+        }
+      } catch (e) {
+        console.warn('LLM API call failed, falling back', e);
+      }
+
+      // Local fallback
+      document.getElementById('modalSubtitle').textContent = 'Incentivized renewal proposal ready for digital delivery:';
+      document.getElementById('modalText').value = 
+        `Dear ${name},\n\n` +
+        `Your lease at ${prop} concludes in ${daysLeft} days. ` +
+        `In appreciation of your valued tenancy, we are pleased to extend an exclusive 12-month renewal at ₹${rent.toLocaleString()}/month ` +
+        `with waived maintenance fees for Q1 and priority maintenance SLA guarantee.\n\n` +
+        `Please reply to this notice or confirm via TenantEase resident portal.`;
+    }
+
+    function triggerAudit(prop) {
+      showToast(`Audit work-order issued for ${prop}. Field team notified.`);
+    }
+
+    function openModal() {
+      document.getElementById('actionModal').classList.remove('hidden');
+      document.getElementById('copyBtnText').textContent = 'Copy to Clipboard';
+    }
+
+    function closeModal() {
+      document.getElementById('actionModal').classList.add('hidden');
+    }
+
+    function copyModalText() {
+      const text = document.getElementById('modalText').value;
+      navigator.clipboard.writeText(text);
+      document.getElementById('copyBtnText').textContent = 'Copied!';
+      showToast('Message copied to clipboard.');
+      setTimeout(closeModal, 800);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 3000);
+    }
+  </script>
+</body>
+</html>

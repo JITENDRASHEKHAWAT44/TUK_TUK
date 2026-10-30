@@ -1,0 +1,81 @@
+tenant_id,tenant_name,property_id,monthly_rent,occupation,age,avg_delay_days,max_delay_days,late_payment_rate,payment_rate,delay_trend,partial_payment_rate,total_complaints,unresolved_complaints,emergency_complaints,avg_complaint_urgency,days_until_lease_end,lease_duration_months,tenure_months,will_pay_late_next_month,will_churn,churn_probability
+TNT-001,Sanjay Kapoor,PROP-010,19500,Startup Founder,49,6.7,11,0.917,0.833,-0.2,0.083,2,1,0,2.5,-2,11,11,0,1,0.825
+TNT-002,Ananya Khandelwal,PROP-014,6500,Student,27,0.1,1,0.0,1.0,-0.1,0.0,3,0,0,4.0,-63,11,13,0,0,0.085
+TNT-003,Sakshi Mehta,PROP-006,6500,Government Employee,38,0.1,1,0.0,1.0,-0.1,0.0,1,0,0,7.0,171,11,5,0,0,0.078
+TNT-004,Nikhil Saxena,PROP-015,15000,Freelancer,35,2.1,6,0.167,1.0,0.3,0.0,5,1,0,3.6,-81,11,13,1,0,0.273
+TNT-005,Neha Nair,PROP-001,13500,Student,28,0.1,1,0.0,1.0,-0.1,0.0,4,2,1,3.2,-267,6,14,0,0,0.097
+TNT-006,Pooja Patel,PROP-023,12500,IT Professional,39,0.2,1,0.0,1.0,0.1,0.0,6,2,0,3.8,131,11,6,0,0,0.165
+TNT-007,Ishaan Malhotra,PROP-020,7000,Teacher,31,0.2,1,0.0,1.0,0.2,0.0,1,0,0,6.0,137,12,7,0,0,0.091
+TNT-008,Amit Nair,PROP-005,11000,IT Professional,48,0.0,0,0.0,1.0,0.0,0.0,2,1,0,4.5,-45,12,13,0,0,0.076
+TNT-009,Neha Mishra,PROP-012,25500,IT Professional,36,0.1,1,0.0,1.0,0.3,0.0,2,0,1,8.0,290,24,14,0,0,0.099
+TNT-010,Pooja Gupta,PROP-016,8000,IT Professional,38,3.2,10,0.25,1.0,0.7,0.0,1,0,0,7.0,-138,12,16,1,0,0.324
+TNT-011,Rahul Bhatia,PROP-003,7500,Doctor,34,0.2,2,0.0,1.0,-0.3,0.0,1,0,1,9.0,-174,12,17,0,0,0.159
+TNT-012,Divya Patel,PROP-017,14500,Freelancer,33,2.5,7,0.333,1.0,0.7,0.0,1,1,1,9.0,-68,12,14,0,0,0.377
+TNT-013,Pranav Agarwal,PROP-009,5500,Freelancer,27,2.3,5,0.25,1.0,-0.4,0.0,1,1,0,2.0,270,12,3,1,0,0.377
+TNT-014,Neha Yadav,PROP-018,10500,Government Employee,48,4.0,8,0.75,0.917,2.3,0.0,1,0,0,7.0,-253,6,14,1,0,0.322
+TNT-015,Sakshi Choudhary,PROP-007,13000,Startup Founder,29,9.2,24,0.917,0.833,9.1,0.083,3,1,0,5.7,237,24,16,1,0,0.454
+TNT-016,Siddharth Mittal,PROP-008,8500,Freelancer,37,0.0,0,0.0,1.0,0.0,0.0,0,0,0,0.0,-205,12,18,0,0,0.158
+TNT-017,Pooja Reddy,PROP-025,13000,Doctor,48,2.9,6,0.417,0.917,3.3,0.0,2,1,2,10.0,-52,11,12,0,0,0.192
+TNT-018,Meera Bhatia,PROP-011,7500,Startup Founder,36,4.3,14,0.75,1.0,-0.9,0.0,4,0,2,5.2,-335,6,17,0,0,0.192
+TNT-019,Aditi Saxena,PROP-013,22000,Business Owner,23,0.2,2,0.0,1.0,0.1,0.0,5,2,0,3.6,184,24,17,0,0,0.165
+TNT-020,Kavya Verma,PROP-002,5000,Startup Founder,27,2.8,9,0.333,1.0,0.2,0.0,0,0,0,0.0,492,24,7,0,0,0.307
+TNT-021,Riya Choudhary,PROP-004,14000,Government Employee,29,0.1,1,0.0,1.0,-0.1,0.0,3,1,0,5.0,-462,6,21,0,0,0.077
+TNT-022,Ishaan Mittal,PROP-024,14000,Government Employee,26,2.8,9,0.417,1.0,-2.8,0.0,2,1,0,3.0,8,12,11,0,0,0.266
+TNT-023,Yash Verma,PROP-021,34500,Doctor,49,0.2,1,0.0,1.0,-0.3,0.0,3,0,0,4.7,-218,6,13,1,0,0.092
+TNT-024,Shreya Jain,PROP-022,5500,Startup Founder,39,3.1,9,0.333,1.0,-1.4,0.0,4,0,0,3.0,-230,11,18,0,0,0.257
+TNT-025,Rakesh Sharma,PROP-019,6500,IT Professional,39,0.0,0,0.0,1.0,0.0,0.0,0,0,0,0.0,155,24,18,0,0,0.154
+TNT-026,Neha Bhatia,PROP-010,19500,Freelancer,37,3.3,6,0.5,0.917,0.1,0.0,3,2,0,4.3,-105,6,9,0,0,0.361
+TNT-027,Vikram Rathore,PROP-014,6500,Doctor,34,3.9,9,0.5,1.0,0.6,0.0,3,0,0,4.0,253,24,15,1,0,0.154
+TNT-028,Manish Agarwal,PROP-006,6500,Freelancer,33,0.1,1,0.0,1.0,-0.1,0.0,2,1,1,7.0,-308,11,21,0,0,0.155
+TNT-029,Pooja Verma,PROP-015,15000,Doctor,50,0.0,0,0.0,1.0,0.0,0.0,3,0,0,5.0,-306,11,21,0,0,0.144
+TNT-030,Suresh Mehta,PROP-001,13500,Business Owner,37,0.1,1,0.0,1.0,-0.1,0.0,2,2,0,5.5,218,12,4,0,0,0.103
+TNT-031,Varun Saxena,PROP-023,12500,Government Employee,35,3.2,7,0.417,1.0,-1.2,0.0,1,1,0,4.0,-186,11,17,1,0,0.241
+TNT-032,Neha Jain,PROP-020,7000,Startup Founder,40,0.4,2,0.0,1.0,-0.6,0.0,1,0,0,6.0,157,11,5,0,0,0.036
+TNT-033,Zoya Yadav,PROP-005,11000,Freelancer,41,0.2,1,0.0,1.0,0.6,0.0,1,0,0,3.0,31,12,10,0,0,0.089
+TNT-034,Sakshi Mishra,PROP-012,25500,IT Professional,36,2.4,7,0.25,1.0,-0.6,0.0,0,0,0,0.0,-209,12,18,0,0,0.255
+TNT-035,Kavya Kapoor,PROP-016,8000,Business Owner,42,7.4,18,0.75,1.0,8.3,0.083,8,4,1,4.6,-185,6,12,1,1,1.0
+TNT-036,Tanvi Patel,PROP-003,7500,Startup Founder,22,10.3,18,0.833,1.0,-8.9,0.25,3,1,1,5.3,293,24,14,1,1,0.729
+TNT-037,Bhavna Kapoor,PROP-017,14500,Student,37,2.5,7,0.333,0.917,-1.5,0.0,4,0,1,6.0,78,12,9,1,0,0.3
+TNT-038,Deepak Choudhary,PROP-009,5500,Startup Founder,37,0.0,0,0.0,1.0,0.0,0.0,4,2,0,3.0,616,24,3,0,0,0.208
+TNT-039,Aniket Rathore,PROP-018,10500,Student,53,2.5,8,0.25,1.0,1.6,0.0,2,1,0,4.5,-152,11,16,1,0,0.184
+TNT-040,Rakesh Shekhawat,PROP-007,13000,Teacher,52,3.8,12,0.417,1.0,4.3,0.0,2,0,0,3.5,-225,12,19,1,0,0.347
+TNT-041,Amit Singh,PROP-008,8500,Startup Founder,26,0.2,1,0.0,1.0,0.2,0.0,4,0,0,3.8,475,24,8,0,0,0.033
+TNT-042,Bhavna Trivedi,PROP-025,13000,Freelancer,37,8.9,20,0.75,1.0,4.6,0.0,3,1,0,5.3,-1,12,12,1,0,0.467
+TNT-043,Devansh Goyal,PROP-011,7500,Student,49,5.1,13,0.583,1.0,7.9,0.167,1,0,0,1.0,538,24,6,1,1,0.908
+TNT-044,Ishaan Jain,PROP-013,22000,Startup Founder,38,0.0,0,0.0,1.0,0.0,0.0,0,0,0,0.0,-181,11,17,0,0,0.113
+TNT-045,Pranav Yadav,PROP-002,5000,Startup Founder,46,0.1,1,0.0,1.0,0.3,0.0,2,1,0,1.5,621,24,3,0,0,0.141
+TNT-046,Yash Patel,PROP-004,14000,Government Employee,44,0.1,1,0.0,1.0,-0.1,0.0,5,0,0,4.0,-120,12,16,0,0,0.036
+TNT-047,Devansh Goyal,PROP-024,14000,Government Employee,33,3.2,9,0.417,0.917,2.8,0.0,1,0,0,5.0,-16,11,11,1,0,0.317
+TNT-048,Varun Rathore,PROP-021,34500,Doctor,47,0.2,1,0.0,1.0,-0.2,0.0,4,1,1,4.0,-282,12,21,0,0,0.075
+TNT-049,Nikhil Shekhawat,PROP-022,5500,Government Employee,42,0.2,2,0.0,1.0,-0.3,0.0,2,0,1,5.0,-314,6,16,0,0,0.046
+TNT-050,Sanjay Mehta,PROP-019,6500,Doctor,51,2.6,6,0.417,1.0,-1.2,0.0,2,0,0,2.5,-205,12,18,1,0,0.29
+TNT-051,Zoya Singh,PROP-010,19500,Doctor,37,3.5,8,0.583,1.0,1.1,0.0,5,1,1,5.4,77,24,21,1,0,0.317
+TNT-052,Ananya Saxena,PROP-014,6500,Government Employee,30,0.3,2,0.0,1.0,0.4,0.0,2,0,0,5.5,-106,12,15,0,0,0.085
+TNT-053,Zoya Agarwal,PROP-006,6500,IT Professional,29,0.2,1,0.0,1.0,-0.3,0.0,1,0,0,5.0,-327,11,21,0,0,0.098
+TNT-054,Zoya Reddy,PROP-015,15000,Business Owner,45,0.1,1,0.0,1.0,-0.1,0.0,1,0,0,6.0,-126,11,15,0,0,0.121
+TNT-055,Varun Patel,PROP-001,13500,Student,42,3.6,10,0.333,0.917,-1.8,0.0,2,1,0,3.0,-136,6,10,0,0,0.36
+TNT-056,Rohit Mittal,PROP-023,12500,Teacher,36,0.2,1,0.0,1.0,0.6,0.0,4,0,0,2.2,-11,12,12,0,0,0.11
+TNT-057,Sanjay Mehta,PROP-020,7000,Business Owner,49,0.2,1,0.0,1.0,-0.2,0.0,3,0,0,4.0,166,24,18,0,0,0.132
+TNT-058,Vikram Verma,PROP-005,11000,Government Employee,54,9.7,15,0.917,0.917,3.1,0.167,4,3,1,4.8,-141,11,15,0,1,0.673
+TNT-059,Devansh Nair,PROP-012,25500,Freelancer,23,0.2,1,0.0,1.0,0.2,0.0,2,0,0,4.0,-253,11,19,0,0,0.138
+TNT-060,Rakesh Nair,PROP-016,8000,Teacher,35,0.2,1,0.0,1.0,-0.2,0.0,1,1,0,5.0,-9,12,12,0,0,0.107
+TNT-061,Rohan Patel,PROP-003,7500,Startup Founder,39,2.0,5,0.25,0.917,-1.4,0.0,2,1,0,4.0,-109,11,14,0,0,0.212
+TNT-062,Sanjay Mishra,PROP-017,14500,IT Professional,41,3.2,7,0.5,1.0,-2.6,0.0,4,0,0,3.5,133,24,19,0,0,0.332
+TNT-063,Aarav Agarwal,PROP-009,5500,Student,33,0.2,2,0.0,1.0,1.0,0.0,4,0,1,6.0,-523,6,23,0,0,0.092
+TNT-064,Arjun Saxena,PROP-018,10500,Freelancer,48,0.3,2,0.0,1.0,0.0,0.0,4,1,0,4.5,35,12,10,0,0,0.062
+TNT-065,Ishaan Mittal,PROP-007,13000,Freelancer,47,0.1,1,0.0,1.0,-0.1,0.0,0,0,0,0.0,249,12,3,0,0,0.044
+TNT-066,Ishaan Gupta,PROP-008,8500,Student,34,9.2,14,0.833,0.833,0.2,0.083,3,1,0,4.3,44,12,10,0,1,0.578
+TNT-067,Tanvi Malhotra,PROP-025,13000,Freelancer,41,2.7,6,0.25,1.0,-1.3,0.0,3,0,0,7.0,163,11,5,1,0,0.306
+TNT-068,Priya Malhotra,PROP-011,7500,IT Professional,51,2.8,7,0.417,0.833,0.3,0.0,1,0,0,3.0,-270,6,15,0,0,0.295
+TNT-069,Rahul Mittal,PROP-013,22000,Government Employee,24,4.2,9,0.5,1.0,1.0,0.0,3,0,0,4.7,-345,11,22,0,0,0.279
+TNT-070,Rohan Nair,PROP-002,5000,Freelancer,46,7.6,17,0.833,1.0,3.2,0.167,5,4,0,4.0,-209,11,17,1,1,0.813
+TNT-071,Rakesh Gupta,PROP-004,14000,Student,43,0.2,2,0.0,1.0,-0.2,0.0,2,1,0,1.5,-377,11,23,0,0,0.067
+TNT-072,Shreya Rathore,PROP-024,14000,Business Owner,31,3.3,8,0.5,0.917,2.4,0.0,1,0,0,2.0,-449,6,20,0,0,0.325
+TNT-073,Rakesh Mittal,PROP-021,34500,Government Employee,45,0.2,2,0.0,1.0,0.1,0.0,5,1,0,4.0,-13,6,6,0,0,0.107
+TNT-074,Siddharth Choudhary,PROP-022,5500,Teacher,55,8.1,21,0.75,0.917,10.3,0.083,3,1,0,5.0,-355,12,23,1,1,0.865
+TNT-075,Nikhil Verma,PROP-019,6500,Student,54,8.2,13,1.0,1.0,1.9,0.083,1,1,0,7.0,36,11,9,0,1,0.95
+TNT-076,Siddharth Nair,PROP-010,19500,Doctor,23,10.7,21,0.917,0.917,4.5,0.0,3,1,0,3.7,147,11,6,1,0,0.433
+TNT-077,Gaurav Verma,PROP-014,6500,Teacher,31,7.2,13,0.917,1.0,4.2,0.167,3,2,0,5.3,-103,11,14,1,1,0.939
+TNT-078,Priya Mehta,PROP-006,6500,Government Employee,54,0.2,1,0.0,1.0,-0.3,0.0,1,1,0,5.0,-55,11,12,0,0,0.176
+TNT-079,Aarav Mittal,PROP-015,15000,IT Professional,54,8.1,19,0.75,0.833,-3.9,0.083,4,2,1,5.8,332,24,12,0,1,0.54
+TNT-080,Rohit Nair,PROP-001,13500,Doctor,44,0.2,1,0.0,1.0,-0.2,0.0,3,1,0,5.0,-391,6,19,0,0,0.108

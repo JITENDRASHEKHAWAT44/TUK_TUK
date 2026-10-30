@@ -1,0 +1,201 @@
+request_id,tenant_id,property_id,category,complaint_text,urgency_score,created_date,is_resolved,resolution_days,is_emergency
+MNT-0001,TNT-041,PROP-008,Structural,Main door hinge broken door not closing,4,2026-10-26,True,6.0,False
+MNT-0002,TNT-077,PROP-014,Plumbing,Hot water not coming in shower,7,2026-06-05,True,13.0,False
+MNT-0003,TNT-033,PROP-005,HVAC,"Ceiling fan speed controller not working. Also, hot water not coming in shower",3,2026-06-28,True,8.0,False
+MNT-0004,TNT-011,PROP-003,Electrical,Light fitting fell from ceiling needs urgent fix,9,2026-09-19,True,6.0,True
+MNT-0005,TNT-066,PROP-008,HVAC,Heater not working and its very cold,3,2026-05-29,False,,False
+MNT-0006,TNT-057,PROP-020,General,Need duplicate key for main door,1,2026-04-05,True,8.0,False
+MNT-0007,TNT-049,PROP-022,HVAC,"AC gas needs refilling not cooling properly. Also, switch board me spark aa rahi hai very dangerous",6,2026-03-21,True,5.0,True
+MNT-0008,TNT-063,PROP-009,Structural,Staircase railing broken in common area,6,2026-10-08,True,14.0,False
+MNT-0009,TNT-038,PROP-009,General,WiFi router placement needs to be changed,2,2026-10-06,False,,False
+MNT-0010,TNT-022,PROP-024,Pest,Bed bugs in mattress cant sleep at night,4,2025-11-27,True,14.0,False
+MNT-0011,TNT-006,PROP-023,General,Need rent receipt for last 3 months for IT filing,3,2026-08-17,False,,False
+MNT-0012,TNT-055,PROP-001,Pest,Pigeons nesting in balcony making mess,3,2026-08-07,True,9.0,False
+MNT-0013,TNT-023,PROP-021,General,Water tanker schedule is irregular,3,2026-05-13,True,11.0,False
+MNT-0014,TNT-003,PROP-006,Plumbing,Water pressure very low in kitchen tap,7,2026-05-05,True,6.0,False
+MNT-0015,TNT-051,PROP-010,Electrical,Switch board me spark aa rahi hai very dangerous,10,2025-12-29,True,12.0,True
+MNT-0016,TNT-059,PROP-012,Electrical,One room has no power supply socket dead,7,2026-02-20,True,8.0,False
+MNT-0017,TNT-019,PROP-013,General,"Water tanker schedule is irregular. Also, gas pipe connection is loose at the joint",1,2025-12-17,True,3.0,False
+MNT-0018,TNT-006,PROP-023,Pest,Termite damage in wooden cupboard doors,3,2025-10-30,False,,False
+MNT-0019,TNT-074,PROP-022,Plumbing,"Drainage blocked in bathroom, bad smell",5,2026-09-13,True,4.0,False
+MNT-0020,TNT-058,PROP-005,Pest,"Termite damage in wooden cupboard doors. Also, inverter not charging battery properly",3,2026-01-17,False,,False
+MNT-0021,TNT-051,PROP-010,Plumbing,"Hot water not coming in shower. Also, strong gas smell in kitchen even when stove is off",6,2026-10-23,True,6.0,False
+MNT-0022,TNT-041,PROP-008,Pest,Spiders making webs in all corners,2,2026-01-10,True,10.0,False
+MNT-0023,TNT-062,PROP-017,HVAC,AC making loud rattling noise cant sleep,4,2026-02-19,True,2.0,False
+MNT-0024,TNT-021,PROP-004,HVAC,Split AC outdoor unit is vibrating badly,3,2026-04-28,True,3.0,False
+MNT-0025,TNT-071,PROP-004,Pest,Lizards everywhere in the flat too many,2,2026-03-09,True,4.0,False
+MNT-0026,TNT-015,PROP-007,Plumbing,"Drainage blocked in bathroom, bad smell",7,2026-04-18,False,,False
+MNT-0027,TNT-067,PROP-025,Electrical,All lights went off suddenly fuse problem,8,2025-12-29,True,5.0,False
+MNT-0028,TNT-060,PROP-016,Structural,Window frame is rusted and stuck,5,2026-07-31,False,,False
+MNT-0029,TNT-035,PROP-016,General,Lift not working in building for 3 days,3,2026-02-20,False,,False
+MNT-0030,TNT-046,PROP-004,Electrical,MCB tripping again and again every few minutes,7,2026-04-26,True,9.0,False
+MNT-0031,TNT-026,PROP-010,Plumbing,"Hot water not coming in shower. Also, garbage collection not happening daily",5,2026-03-07,False,,False
+MNT-0032,TNT-028,PROP-006,Electrical,Plug point is sparking when I connect charger,10,2026-09-24,False,,True
+MNT-0033,TNT-063,PROP-009,Pest,Pigeons nesting in balcony making mess,2,2025-12-09,True,4.0,False
+MNT-0034,TNT-012,PROP-017,Gas,Gas pipe connection is loose at the joint,9,2026-03-14,False,,True
+MNT-0035,TNT-070,PROP-002,HVAC,Split AC outdoor unit is vibrating badly,5,2026-03-29,True,12.0,False
+MNT-0036,TNT-074,PROP-022,Pest,Spiders making webs in all corners,2,2026-09-04,False,,False
+MNT-0037,TNT-038,PROP-009,HVAC,AC gas needs refilling not cooling properly,5,2025-12-03,True,6.0,False
+MNT-0038,TNT-069,PROP-013,General,Common area lights not working at night dark,2,2026-09-05,True,4.0,False
+MNT-0039,TNT-017,PROP-025,Electrical,Wiring is exposed in the hallway dangerous,10,2025-11-11,True,7.0,True
+MNT-0040,TNT-047,PROP-024,HVAC,Window AC is blowing warm air only,5,2025-11-10,True,5.0,False
+MNT-0041,TNT-005,PROP-001,General,"Security guard is not present at night. Also, wall paint is peeling due to moisture",1,2026-08-31,False,,False
+MNT-0042,TNT-027,PROP-014,Pest,Ants colony in bathroom wall near basin,3,2026-07-16,True,5.0,False
+MNT-0043,TNT-041,PROP-008,HVAC,Window AC is blowing warm air only,4,2026-05-19,True,0.0,False
+MNT-0044,TNT-064,PROP-018,General,"Parking space issue neighbor taking my spot. Also, ac gas needs refilling not cooling properly",1,2025-11-17,False,,False
+MNT-0045,TNT-050,PROP-019,General,Intercom system not functioning,1,2026-01-20,True,8.0,False
+MNT-0046,TNT-004,PROP-015,HVAC,Window AC is blowing warm air only,4,2025-12-11,True,10.0,False
+MNT-0047,TNT-009,PROP-012,Gas,"Gas pipe connection is loose at the joint. Also, png meter showing wrong reading bill too high",10,2025-12-30,True,0.0,True
+MNT-0048,TNT-027,PROP-014,Pest,Mosquito problem is unbearable need solution,4,2026-09-27,True,12.0,False
+MNT-0049,TNT-061,PROP-003,General,Society maintenance charge seems too high,1,2026-03-09,True,10.0,False
+MNT-0050,TNT-046,PROP-004,General,Garbage collection not happening daily,2,2025-12-28,True,6.0,False
+MNT-0051,TNT-064,PROP-018,Structural,Floor tiles broken in living room,5,2025-12-17,True,10.0,False
+MNT-0052,TNT-046,PROP-004,Pest,Bed bugs in mattress cant sleep at night,4,2026-09-16,True,5.0,False
+MNT-0053,TNT-018,PROP-011,Plumbing,"Water pipe burst in bathroom flooding. Also, room heater tripping the mcb every time",7,2026-02-10,True,9.0,True
+MNT-0054,TNT-042,PROP-025,Plumbing,"Drainage blocked in bathroom, bad smell",6,2025-12-08,True,14.0,False
+MNT-0055,TNT-048,PROP-021,General,"Garbage collection not happening daily. Also, ac making loud rattling noise cant sleep",1,2026-05-21,False,,False
+MNT-0056,TNT-050,PROP-019,Structural,Staircase railing broken in common area,4,2026-02-23,True,13.0,False
+MNT-0057,TNT-076,PROP-010,HVAC,AC is leaking water inside the room,4,2026-04-03,True,6.0,False
+MNT-0058,TNT-039,PROP-018,HVAC,"AC making loud rattling noise cant sleep. Also, bathroom floor drain is completely blocked",3,2026-06-02,True,3.0,False
+MNT-0059,TNT-064,PROP-018,Structural,Door lock broken cant lock my flat,6,2026-02-18,True,1.0,False
+MNT-0060,TNT-019,PROP-013,Structural,Seepage in wall during rain very bad,5,2026-01-25,False,,False
+MNT-0061,TNT-035,PROP-016,Plumbing,Water pressure very low in kitchen tap,5,2026-03-26,True,13.0,False
+MNT-0062,TNT-010,PROP-016,Electrical,All lights went off suddenly fuse problem,7,2026-06-17,True,13.0,False
+MNT-0063,TNT-070,PROP-002,Plumbing,Pipe fitting is loose and water is spraying,5,2026-07-14,False,,False
+MNT-0064,TNT-077,PROP-014,HVAC,Room heater tripping the MCB every time,4,2026-08-06,False,,False
+MNT-0065,TNT-037,PROP-017,Electrical,Power cut in my flat only neighbors have light,8,2026-06-08,True,2.0,False
+MNT-0066,TNT-035,PROP-016,Electrical,Wiring is exposed in the hallway dangerous,10,2026-06-15,False,,True
+MNT-0067,TNT-005,PROP-001,General,"Water purifier RO service is needed. Also, nameplate needs to be changed on door",2,2026-09-29,False,,False
+MNT-0068,TNT-043,PROP-011,General,Society maintenance charge seems too high,1,2026-06-24,True,5.0,False
+MNT-0069,TNT-019,PROP-013,Pest,Pigeons nesting in balcony making mess,4,2025-12-10,True,6.0,False
+MNT-0070,TNT-038,PROP-009,HVAC,AC se paani gir raha hai floor pe,3,2026-04-06,True,4.0,False
+MNT-0071,TNT-062,PROP-017,Pest,Ants colony in bathroom wall near basin,3,2026-05-15,True,13.0,False
+MNT-0072,TNT-006,PROP-023,Pest,Termite damage in wooden cupboard doors,3,2025-12-08,True,5.0,False
+MNT-0073,TNT-004,PROP-015,General,Nameplate needs to be changed on door,1,2026-03-24,False,,False
+MNT-0074,TNT-079,PROP-015,HVAC,AC compressor is making clicking sound,4,2026-01-22,True,9.0,False
+MNT-0075,TNT-013,PROP-009,Pest,"Cockroach infestation in kitchen bahut zyada hai. Also, lizards everywhere in the flat too many",2,2026-08-27,False,,False
+MNT-0076,TNT-075,PROP-019,Plumbing,"Washbasin pipe broken water everywhere. Also, window glass cracked during storm",7,2026-08-23,False,,False
+MNT-0077,TNT-026,PROP-010,General,WiFi router placement needs to be changed,3,2026-04-28,True,5.0,False
+MNT-0078,TNT-017,PROP-025,Gas,"Gas stove ignition not working have to use matchstick. Also, bed bugs in mattress cant sleep at night",10,2025-11-05,False,,True
+MNT-0079,TNT-042,PROP-025,HVAC,AC se paani gir raha hai floor pe,3,2026-07-12,True,2.0,False
+MNT-0080,TNT-023,PROP-021,Structural,"Main door hinge broken door not closing. Also, ants colony in bathroom wall near basin",4,2026-03-27,True,7.0,False
+MNT-0081,TNT-006,PROP-023,Plumbing,"Drainage blocked in bathroom, bad smell. Also, parking space issue neighbor taking my spot",5,2026-05-22,True,4.0,False
+MNT-0082,TNT-019,PROP-013,Plumbing,Bathroom floor drain is completely blocked,5,2025-12-05,False,,False
+MNT-0083,TNT-004,PROP-015,Plumbing,Hot water not coming in shower,7,2025-12-01,True,5.0,False
+MNT-0084,TNT-057,PROP-020,Pest,Rats have entered the flat from somewhere,4,2025-11-12,True,3.0,False
+MNT-0085,TNT-057,PROP-020,Plumbing,"Kitchen sink leaking badly need help. Also, overhead tank overflowing wasting water",7,2026-04-16,True,6.0,False
+MNT-0086,TNT-066,PROP-008,Electrical,Ceiling fan not working making grinding noise,8,2026-09-16,True,9.0,False
+MNT-0087,TNT-051,PROP-010,Structural,Terrace waterproofing has failed leaking below,4,2025-11-26,False,,False
+MNT-0088,TNT-074,PROP-022,Electrical,Tube light flickering continuously in bedroom,8,2026-04-12,True,0.0,False
+MNT-0089,TNT-076,PROP-010,Pest,Mosquito problem is unbearable need solution,2,2026-06-28,False,,False
+MNT-0090,TNT-001,PROP-010,General,Need rent receipt for last 3 months for IT filing,2,2026-08-23,True,13.0,False
+MNT-0091,TNT-056,PROP-023,HVAC,"AC gas needs refilling not cooling properly. Also, terrace waterproofing has failed leaking below",3,2026-10-21,True,0.0,False
+MNT-0092,TNT-080,PROP-001,Electrical,Power cut in my flat only neighbors have light,7,2026-02-12,True,11.0,False
+MNT-0093,TNT-073,PROP-021,Structural,Balcony railing is loose and shaking,5,2026-09-17,True,8.0,False
+MNT-0094,TNT-002,PROP-014,Structural,"Seepage in wall during rain very bad. Also, hot water not coming in shower",4,2026-08-11,True,6.0,False
+MNT-0095,TNT-018,PROP-011,Structural,Terrace waterproofing has failed leaking below,6,2025-12-04,True,11.0,False
+MNT-0096,TNT-035,PROP-016,HVAC,Thermostat not responding to temperature changes,3,2026-09-15,False,,False
+MNT-0097,TNT-079,PROP-015,Structural,Wall me crack aa gayi hai damp bhi hai,6,2025-11-27,False,,False
+MNT-0098,TNT-067,PROP-025,Plumbing,"Bathroom me paani nahi aa raha hai. Also, ac is leaking water inside the room",7,2026-06-19,True,2.0,False
+MNT-0099,TNT-045,PROP-002,Pest,Bed bugs in mattress cant sleep at night,2,2026-10-14,True,6.0,False
+MNT-0100,TNT-037,PROP-017,Electrical,Switch board me spark aa rahi hai very dangerous,10,2025-12-12,True,7.0,True
+MNT-0101,TNT-035,PROP-016,Structural,Wall me crack aa gayi hai damp bhi hai,6,2026-08-05,True,4.0,False
+MNT-0102,TNT-056,PROP-023,General,Need duplicate key for main door,1,2026-02-11,True,13.0,False
+MNT-0103,TNT-036,PROP-003,General,"Need NOC for address proof for passport. Also, split ac outdoor unit is vibrating badly",1,2026-07-30,False,,False
+MNT-0104,TNT-007,PROP-020,Structural,Wall paint is peeling due to moisture,6,2026-03-29,True,3.0,False
+MNT-0105,TNT-056,PROP-023,HVAC,Room heater tripping the MCB every time,3,2026-01-10,True,8.0,False
+MNT-0106,TNT-004,PROP-015,Pest,"Cockroach infestation in kitchen bahut zyada hai. Also, garbage collection not happening daily",2,2026-04-07,True,7.0,False
+MNT-0107,TNT-072,PROP-024,General,Nameplate needs to be changed on door,2,2026-09-15,True,0.0,False
+MNT-0108,TNT-052,PROP-014,HVAC,AC remote not working need new one,4,2025-12-15,True,5.0,False
+MNT-0109,TNT-008,PROP-005,Structural,Main door hinge broken door not closing,4,2026-01-23,False,,False
+MNT-0110,TNT-054,PROP-015,Electrical,Power cut in my flat only neighbors have light,6,2026-07-02,True,10.0,False
+MNT-0111,TNT-080,PROP-001,General,"WiFi router placement needs to be changed. Also, ac not cooling at all room is very hot",3,2026-04-20,False,,False
+MNT-0112,TNT-037,PROP-017,Pest,Termite damage in wooden cupboard doors,2,2026-03-29,True,0.0,False
+MNT-0113,TNT-035,PROP-016,General,Society maintenance charge seems too high,1,2026-10-07,False,,False
+MNT-0114,TNT-077,PROP-014,Structural,Window frame is rusted and stuck,5,2026-09-16,False,,False
+MNT-0115,TNT-059,PROP-012,General,Parking space issue neighbor taking my spot,1,2026-03-21,True,2.0,False
+MNT-0116,TNT-061,PROP-003,Electrical,MCB tripping again and again every few minutes,7,2025-11-05,False,,False
+MNT-0117,TNT-048,PROP-021,Electrical,Exhaust fan stopped working in kitchen,6,2026-07-18,True,12.0,False
+MNT-0118,TNT-029,PROP-015,Structural,"Door lock broken cant lock my flat. Also, main door hinge broken door not closing",5,2026-04-04,True,5.0,False
+MNT-0119,TNT-058,PROP-005,General,Need NOC for address proof for passport,2,2026-06-16,False,,False
+MNT-0120,TNT-062,PROP-017,General,Lift not working in building for 3 days,3,2025-12-25,True,13.0,False
+MNT-0121,TNT-048,PROP-021,General,"Society maintenance charge seems too high. Also, light fitting fell from ceiling needs urgent fix",4,2026-02-09,True,4.0,True
+MNT-0122,TNT-014,PROP-018,Electrical,"Ceiling fan not working making grinding noise. Also, staircase railing broken in common area",7,2026-01-18,True,3.0,False
+MNT-0123,TNT-015,PROP-007,Plumbing,Kitchen sink leaking badly need help,5,2026-08-28,True,13.0,False
+MNT-0124,TNT-042,PROP-025,Electrical,Bijli ka bill bahut zyada aa raha hai check meter,7,2025-11-12,False,,False
+MNT-0125,TNT-040,PROP-007,Structural,Wall paint is peeling due to moisture,4,2026-09-26,True,10.0,False
+MNT-0126,TNT-069,PROP-013,HVAC,"AC making loud rattling noise cant sleep. Also, water purifier ro service is needed",4,2026-08-28,True,7.0,False
+MNT-0127,TNT-036,PROP-003,Plumbing,Commode is cracked and leaking from base,7,2026-04-10,True,6.0,False
+MNT-0128,TNT-067,PROP-025,Plumbing,Geyser se paani nahi aa raha,6,2026-06-08,True,2.0,False
+MNT-0129,TNT-023,PROP-021,Plumbing,Overhead tank overflowing wasting water,7,2026-05-31,True,14.0,False
+MNT-0130,TNT-002,PROP-014,Structural,"Wall me crack aa gayi hai damp bhi hai. Also, door lock broken cant lock my flat",5,2026-07-19,True,12.0,False
+MNT-0131,TNT-039,PROP-018,Structural,Kitchen platform slab is cracked,6,2026-10-20,False,,False
+MNT-0132,TNT-073,PROP-021,Pest,Ants colony in bathroom wall near basin,3,2026-05-06,False,,False
+MNT-0133,TNT-049,PROP-022,Structural,Balcony railing is loose and shaking,4,2026-05-19,True,0.0,False
+MNT-0134,TNT-024,PROP-022,General,Nameplate needs to be changed on door,2,2026-01-31,True,9.0,False
+MNT-0135,TNT-038,PROP-009,General,"Society maintenance charge seems too high. Also, mosquito problem is unbearable need solution",2,2026-01-29,False,,False
+MNT-0136,TNT-045,PROP-002,General,Need rent receipt for last 3 months for IT filing,1,2026-01-08,False,,False
+MNT-0137,TNT-073,PROP-021,Pest,Ants colony in bathroom wall near basin,2,2026-07-31,True,5.0,False
+MNT-0138,TNT-073,PROP-021,General,Intercom system not functioning,3,2026-10-15,True,5.0,False
+MNT-0139,TNT-070,PROP-002,General,"CCTV cameras in lobby are not working. Also, all lights went off suddenly fuse problem",2,2026-01-25,False,,False
+MNT-0140,TNT-052,PROP-014,Plumbing,Overhead tank overflowing wasting water,7,2026-02-27,True,14.0,False
+MNT-0141,TNT-053,PROP-006,Structural,"Terrace waterproofing has failed leaking below. Also, rats have entered the flat from somewhere",5,2026-09-29,True,9.0,False
+MNT-0142,TNT-030,PROP-001,Pest,Rats have entered the flat from somewhere,4,2026-04-26,False,,False
+MNT-0143,TNT-024,PROP-022,HVAC,AC gas needs refilling not cooling properly,3,2026-05-10,True,2.0,False
+MNT-0144,TNT-040,PROP-007,General,Intercom system not functioning,3,2026-02-22,True,2.0,False
+MNT-0145,TNT-046,PROP-004,Pest,Spiders making webs in all corners,4,2026-04-30,True,9.0,False
+MNT-0146,TNT-006,PROP-023,General,Water tanker schedule is irregular,3,2026-06-01,True,11.0,False
+MNT-0147,TNT-006,PROP-023,Plumbing,Water pressure very low in kitchen tap,6,2026-01-12,True,9.0,False
+MNT-0148,TNT-036,PROP-003,Electrical,Plug point is sparking when I connect charger,8,2025-12-06,True,14.0,True
+MNT-0149,TNT-058,PROP-005,Electrical,Switch board me spark aa rahi hai very dangerous,9,2026-08-05,True,1.0,True
+MNT-0150,TNT-046,PROP-004,Pest,Ants colony in bathroom wall near basin,3,2026-07-14,True,1.0,False
+MNT-0151,TNT-028,PROP-006,HVAC,"AC smell is very bad musty odor. Also, bathroom me paani nahi aa raha hai",4,2026-03-19,True,2.0,False
+MNT-0152,TNT-056,PROP-023,General,Security guard is not present at night,2,2026-01-23,True,13.0,False
+MNT-0153,TNT-048,PROP-021,HVAC,Thermostat not responding to temperature changes,5,2026-07-06,True,1.0,False
+MNT-0154,TNT-055,PROP-001,Pest,Cockroach infestation in kitchen bahut zyada hai,3,2026-06-18,False,,False
+MNT-0155,TNT-076,PROP-010,Plumbing,Toilet flush not working since morning,5,2026-09-21,True,14.0,False
+MNT-0156,TNT-069,PROP-013,Electrical,Tube light flickering continuously in bedroom,8,2026-10-14,True,10.0,False
+MNT-0157,TNT-035,PROP-016,Plumbing,Commode is cracked and leaking from base,5,2026-09-08,True,3.0,False
+MNT-0158,TNT-029,PROP-015,Structural,Wall paint is peeling due to moisture,5,2025-11-25,True,3.0,False
+MNT-0159,TNT-009,PROP-012,Plumbing,"Drainage blocked in bathroom, bad smell",6,2026-08-12,True,0.0,False
+MNT-0160,TNT-058,PROP-005,HVAC,AC remote not working need new one,5,2025-12-26,False,,False
+MNT-0161,TNT-079,PROP-015,Plumbing,Water pipe burst in bathroom flooding,8,2026-08-31,True,6.0,True
+MNT-0162,TNT-070,PROP-002,General,"Lift not working in building for 3 days. Also, gas pipe connection is loose at the joint",1,2026-04-23,False,,False
+MNT-0163,TNT-031,PROP-023,HVAC,AC remote not working need new one,4,2026-07-06,False,,False
+MNT-0164,TNT-064,PROP-018,Structural,Door lock broken cant lock my flat,6,2026-09-10,True,5.0,False
+MNT-0165,TNT-024,PROP-022,General,Water tanker schedule is irregular,3,2026-07-05,True,13.0,False
+MNT-0166,TNT-021,PROP-004,HVAC,AC is leaking water inside the room,5,2025-11-12,False,,False
+MNT-0167,TNT-004,PROP-015,HVAC,Ceiling fan speed controller not working,4,2026-09-19,True,13.0,False
+MNT-0168,TNT-037,PROP-017,Pest,Spiders making webs in all corners,4,2026-01-10,True,9.0,False
+MNT-0169,TNT-078,PROP-006,Plumbing,Bathroom floor drain is completely blocked,5,2026-07-13,False,,False
+MNT-0170,TNT-027,PROP-014,Plumbing,"Drainage blocked in bathroom, bad smell. Also, pigeons nesting in balcony making mess",5,2025-12-12,True,9.0,False
+MNT-0171,TNT-032,PROP-020,Electrical,Meter reading seems wrong bill too high,6,2026-09-15,True,6.0,False
+MNT-0172,TNT-026,PROP-010,Structural,Staircase railing broken in common area,5,2026-10-23,False,,False
+MNT-0173,TNT-063,PROP-009,Gas,Smell of gas coming from pipeline in wall,9,2026-03-31,True,9.0,True
+MNT-0174,TNT-062,PROP-017,Structural,Terrace waterproofing has failed leaking below,4,2026-09-05,True,1.0,False
+MNT-0175,TNT-018,PROP-011,Pest,Spiders making webs in all corners,3,2026-06-16,True,7.0,False
+MNT-0176,TNT-035,PROP-016,Structural,"Main door hinge broken door not closing. Also, split ac outdoor unit is vibrating badly",4,2025-12-17,True,11.0,False
+MNT-0177,TNT-002,PROP-014,HVAC,Ceiling fan speed controller not working,3,2026-10-04,True,14.0,False
+MNT-0178,TNT-005,PROP-001,Electrical,"Light fitting fell from ceiling needs urgent fix. Also, nameplate needs to be changed on door",9,2026-05-23,True,7.0,True
+MNT-0179,TNT-071,PROP-004,General,"Need duplicate key for main door. Also, need noc for address proof for passport",1,2026-05-29,False,,False
+MNT-0180,TNT-079,PROP-015,HVAC,Thermostat not responding to temperature changes,5,2026-03-30,False,,False
+MNT-0181,TNT-030,PROP-001,Electrical,All lights went off suddenly fuse problem,7,2026-02-07,False,,False
+MNT-0182,TNT-051,PROP-010,General,Garbage collection not happening daily,1,2026-05-23,True,6.0,False
+MNT-0183,TNT-073,PROP-021,Plumbing,Pipe fitting is loose and water is spraying,7,2026-10-15,True,14.0,False
+MNT-0184,TNT-005,PROP-001,General,"Water purifier RO service is needed. Also, washbasin pipe broken water everywhere",1,2026-04-28,True,4.0,False
+MNT-0185,TNT-080,PROP-001,HVAC,Window AC is blowing warm air only,5,2026-08-27,True,3.0,False
+MNT-0186,TNT-024,PROP-022,HVAC,Cooler motor has stopped working,4,2026-01-02,True,5.0,False
+MNT-0187,TNT-021,PROP-004,Plumbing,Commode is cracked and leaking from base,7,2026-09-13,True,6.0,False
+MNT-0188,TNT-041,PROP-008,Plumbing,Pipe fitting is loose and water is spraying,5,2026-07-08,True,10.0,False
+MNT-0189,TNT-051,PROP-010,Electrical,One room has no power supply socket dead,6,2025-11-14,True,14.0,False
+MNT-0190,TNT-015,PROP-007,Plumbing,Toilet flush not working since morning,5,2026-07-07,True,12.0,False
+MNT-0191,TNT-019,PROP-013,Pest,Bed bugs in mattress cant sleep at night,3,2026-05-04,True,3.0,False
+MNT-0192,TNT-008,PROP-005,HVAC,AC gas needs refilling not cooling properly,5,2026-04-09,True,0.0,False
+MNT-0193,TNT-029,PROP-015,Structural,Kitchen platform slab is cracked,5,2026-01-15,True,9.0,False
+MNT-0194,TNT-070,PROP-002,Electrical,"One room has no power supply socket dead. Also, tap se paani drip ho raha hai continuously",7,2025-12-06,False,,False
+MNT-0195,TNT-066,PROP-008,Pest,"Bed bugs in mattress cant sleep at night. Also, png meter showing wrong reading bill too high",2,2025-12-26,True,5.0,False
+MNT-0196,TNT-001,PROP-010,Pest,Lizards everywhere in the flat too many,3,2026-03-29,False,,False
+MNT-0197,TNT-018,PROP-011,Pest,Bees have made hive near window dangerous,5,2026-07-08,True,10.0,True
+MNT-0198,TNT-022,PROP-024,Pest,Ants colony in bathroom wall near basin,2,2025-11-27,False,,False
+MNT-0199,TNT-063,PROP-009,Plumbing,Kitchen sink leaking badly need help,7,2026-06-19,True,8.0,False
+MNT-0200,TNT-068,PROP-011,Pest,Rats have entered the flat from somewhere,3,2025-11-28,True,5.0,False

@@ -1,0 +1,26 @@
+property_id,property_name,area,city,property_type,floor,total_floors,furnishing,building_age_years,monthly_rent,deposit
+PROP-001,Mishra Apartments,Mansarovar,Jaipur,1BHK,3,5,Fully-Furnished,4,13500,27000
+PROP-002,Sharma Residency,C-Scheme,Jaipur,1RK,3,6,Fully-Furnished,20,5000,10000
+PROP-003,Goyal Villa,Jagatpura,Jaipur,1RK,6,6,Semi-Furnished,19,7500,45000
+PROP-004,Jain Enclave,Bani Park,Jaipur,1BHK,5,7,Unfurnished,7,14000,84000
+PROP-005,Mehta Tower,Vaishali Nagar,Jaipur,1BHK,5,12,Semi-Furnished,2,11000,110000
+PROP-006,Gupta Villa,Vaishali Nagar,Jaipur,1RK,4,12,Semi-Furnished,19,6500,19500
+PROP-007,Choudhary Tower,Mansarovar,Jaipur,1BHK,1,6,Unfurnished,13,13000,78000
+PROP-008,Jain Tower,Sitapura,Jaipur,Studio,5,6,Fully-Furnished,9,8500,17000
+PROP-009,Shekhawat Apartments,Sitapura,Jaipur,1RK,2,10,Semi-Furnished,9,5500,16500
+PROP-010,Choudhary Residency,Durgapura,Jaipur,3BHK,5,9,Semi-Furnished,3,19500,58500
+PROP-011,Reddy Apartments,Ajmer Road,Jaipur,1RK,7,9,Fully-Furnished,15,7500,22500
+PROP-012,Shekhawat Villa,Malviya Nagar,Jaipur,3BHK,4,12,Semi-Furnished,19,25500,255000
+PROP-013,Rathore Enclave,Jagatpura,Jaipur,3BHK,1,3,Unfurnished,5,22000,66000
+PROP-014,Saxena Enclave,Sanganer,Jaipur,Studio,7,11,Semi-Furnished,18,6500,13000
+PROP-015,Shekhawat Tower,Sitapura,Jaipur,1BHK,5,4,Semi-Furnished,14,15000,45000
+PROP-016,Rathore Apartments,Mansarovar,Jaipur,Studio,8,4,Fully-Furnished,10,8000,24000
+PROP-017,Shekhawat Villa,Tonk Road,Jaipur,2BHK,0,12,Semi-Furnished,16,14500,29000
+PROP-018,Patel Apartments,Ajmer Road,Jaipur,1BHK,0,6,Fully-Furnished,3,10500,21000
+PROP-019,Shekhawat Apartments,Durgapura,Jaipur,Studio,2,10,Fully-Furnished,6,6500,39000
+PROP-020,Bhatia Apartments,Durgapura,Jaipur,1RK,8,6,Fully-Furnished,10,7000,70000
+PROP-021,Malhotra Residency,Raja Park,Jaipur,3BHK,3,6,Unfurnished,11,34500,69000
+PROP-022,Khandelwal Apartments,Sodala,Jaipur,1RK,0,4,Fully-Furnished,21,5500,11000
+PROP-023,Reddy Residency,Vaishali Nagar,Jaipur,2BHK,8,6,Semi-Furnished,22,12500,125000
+PROP-024,Khandelwal Villa,Sodala,Jaipur,2BHK,7,6,Semi-Furnished,14,14000,42000
+PROP-025,Bhatia Tower,Vaishali Nagar,Jaipur,1BHK,6,9,Semi-Furnished,24,13000,26000
